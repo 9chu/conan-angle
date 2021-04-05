@@ -1,0 +1,11 @@
+--- angle/build/toolchain/win/setup_toolchain.py	2021-04-02 12:04:08.656367800 +0800
++++ angle/build/toolchain/win/setup_toolchain.py	2021-04-02 12:07:01.317479200 +0800
+@@ -173,7 +173,7 @@
+     # Explicitly specifying the SDK version to build with to avoid accidentally
+     # building with a new and untested SDK. This should stay in sync with the
+     # packaged toolchain in build/vs_toolchain.py.
+-    args.append('10.0.19041.0')
++    #args.append('10.0.19041.0')
+     variables = _LoadEnvFromBat(args)
+   return _ExtractImportantEnvironment(variables)
+ 

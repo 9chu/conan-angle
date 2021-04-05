@@ -1,0 +1,33 @@
+--- angle/scripts/bootstrap.py	2021-04-04 11:37:26.997133500 +0800
++++ angle/scripts/bootstrap.py	2021-04-04 15:31:39.333471200 +0800
+@@ -1,5 +1,7 @@
+ #!/usr/bin/python2
+ 
++from __future__ import print_function
++
+ # Copyright 2015 Google Inc.  All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+@@ -18,11 +20,11 @@
+     try:
+         rc = subprocess.call(gclient_cmd, shell=True)
+     except OSError:
+-        print 'could not run "%s" via shell' % gclient_cmd
++        print('could not run "%s" via shell' % gclient_cmd)
+         sys.exit(1)
+ 
+     if rc:
+-        print 'failed command: "%s"' % gclient_cmd
++        print('failed command: "%s"' % gclient_cmd)
+         sys.exit(1)
+ 
+     with open('.gclient') as gclient_file:
+@@ -35,7 +37,7 @@
+     with open('.gclient', 'w') as gclient_file:
+         gclient_file.write(content)
+ 
+-    print 'created .gclient'
++    print('created .gclient')
+ 
+ 
+ if __name__ == '__main__':
