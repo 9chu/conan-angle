@@ -52,8 +52,7 @@ class AngleConan(ConanFile):
                 self.run(".\git.bat config --system core.longpaths true")
         
         # apply patches
-        if os_info.is_windows:
-            patch(patch_file="patches/bootstrap.patch")
+        patch(patch_file="patches/bootstrap.patch")
         
         # fetch dependencies
         python_executable = self._python_executable
